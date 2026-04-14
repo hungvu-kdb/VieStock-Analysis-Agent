@@ -7,16 +7,16 @@ User Query
     │
     ▼
 ┌─────────────┐
-│  Supervisor │  ← Classifies intent, decides which agents to invoke
+│  Supervisor │  ← (i)
 └──────┬──────┘
        │
   ┌────┴─────────────────────┐
   │                          │
   ▼                          ▼
-Out of Scope         Parallel Processor
+Out of Scope         Parallel Processor 
   │                 ┌────────┴────────┐
   │                 ▼                 ▼
-  │            KB Agent          SQL Agent
+  │            KB Agent          SQL Agent        ← (ii)
   │         (document data)   (structured data)
   │                 └────────┬────────┘
   │                          ▼
@@ -25,6 +25,11 @@ Out of Scope         Parallel Processor
   └──────────────────────────┤
                              ▼
                       Final Response
+
+                      **Note**:
+                      (i): Classifies intent, decides which agents to invoke
+                      (ii): The number Agent of parallel process can be flexible depend on type of information the question need to query.
+
 ```
 
 ### Project Structure
